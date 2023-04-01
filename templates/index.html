@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Style Transfer App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.6.0"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Image Style Transfer App</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="column">
+                <h2>Add image on which style is required</h2>
+                <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="content_image" id="content-image" accept="image/*" required>
+                    <img id="content-img-preview" src="#" alt="Content image preview">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="column">
+                <h2>Add image from which style will be extracted</h2>
+                <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="style_image" id="style-image" accept="image/*" required>
+                    <img id="style-img-preview" src="#" alt="Style image preview">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="column">
+                <h2>Style applied on the image</h2>
+                <img id="stylized-img-preview" src="#" alt="Stylized image preview">
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
