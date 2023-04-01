@@ -3,3 +3,4 @@ numpy
 tensorflow
 tensorflow_hub
 Pillow
+gunicorn
