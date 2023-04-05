@@ -61,7 +61,7 @@ img {
         <div class="container">
             <div class="column">
                 <h2>Add image on which style is required</h2>
-                <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+                <form action="/predict" method="POST" enctype="multipart/form-data">
                     <input type="file" name="content_image" id="content-image" accept="image/*" required>
                     <img id="content-image-preview" src="#" alt="Content image preview">
                     <input type="submit" value="Submit">
@@ -69,7 +69,7 @@ img {
             </div>
             <div class="column">
                 <h2>Add image from which style will be extracted</h2>
-                <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+                <form action="/predict" method="POST" enctype="multipart/form-data">
                     <input type="file" name="style_image" id="style-image" accept="image/*" required>
                     <img id="style-image-preview" src="#" alt="Style image preview">
                     <input type="submit" value="Submit">
